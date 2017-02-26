@@ -16,8 +16,9 @@ if(delay == '120'){
   $('#Capa_1, .selected .logo').show();
   $(child[choice]).show();
 }
-  $( "meta[theme-color]" ).attr( "content", clCSS );
     });
+    $('meta[name=theme-color]').remove();
+    $('head').append('<meta name="theme-color" content="'+clCSS+'">');
   }
   selected('0','120');
   $('#Capa_1').css('color', clCSS);
@@ -28,6 +29,8 @@ if(delay == '120'){
     $(child[choice]).hide();
     selected('100%', '0');
     $('.menu-child').delay(750).addClass('bounceInUp').show();
+    $('meta[name=theme-color]').remove();
+    $('head').append('<meta name="theme-color" content="#0255a0">');
     /*history.replaceState(null,null,'home');
     history.pushState(null, null,'home');*/
   });
