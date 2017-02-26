@@ -27,7 +27,7 @@ if(delay == '120'){
 }
     });
     $('meta[name=theme-color]').remove();
-    $('head').append('<meta name="theme-color" content="'+rgb2hex(clCSS)+'">');
+    $('head').append('<meta name="theme-color" content="'+rgb2hex(bgCSS)+'">');
   }
   selected('0','120');
   $('#Capa_1').css('color', clCSS);
