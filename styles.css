@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
 body,html {padding:0; margin:0;font-family: 'Fredoka One', sans-serif;font-size:3vmax}
-@media(max-width: 767px){ body {font-size: 4.5vmax;}}
+@media(max-width: 767px){ body {font-size: 4vmax;}}
 .table {
   display: table;
   height: 100vh;
@@ -15,16 +15,16 @@ body,html {padding:0; margin:0;font-family: 'Fredoka One', sans-serif;font-size:
   letter-spacing: -1em;
 }
 .menu-wrapper {
-  width: 35%;
-  min-width: 280px;
-  max-width: 500px;
+  width: 80%;
+  min-width: 260px;
+  max-width: 420px;
   margin: 0 auto;
   line-height: 0;
   letter-spacing: -1em;
 }
 .menu-child {
   width: 46%;
-  margin: 1.75% 2%;
+  margin: 2%;
   letter-spacing: initial;
   border-radius: 10px;
   display:inline-block;
@@ -77,10 +77,10 @@ body,html {padding:0; margin:0;font-family: 'Fredoka One', sans-serif;font-size:
 .menu-inner h2{
   position: absolute;
   left: 5%;
-  bottom: 3%;
+  bottom: 5%;
   margin: 0;
   line-height: 1;
-  font-size: 5vmax;
+  font-size: 1.05em;
 }
 .logo {
   width: 50%;
