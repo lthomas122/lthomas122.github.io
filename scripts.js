@@ -16,6 +16,7 @@ if(delay == '120'){
   $('#Capa_1, .selected .logo').show();
   $(child[choice]).show();
 }
+  $( "meta[theme-color]" ).attr( "content", clCSS );
     });
   }
   selected('0','120');
