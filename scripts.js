@@ -4,6 +4,13 @@ function shakeIt(a){
 $('.menu-child').hover( function(){
   shakeIt(this);
 });
+function rgb2hex(rgb){
+ rgb = rgb.match(/^rgb((d+),s*(d+),s*(d+))$/);
+ return "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2);
+}
 $('.menu-inner').click(function(){
   var bgCSS = $(this).css('background'),
   clCSS = $(this).css('color'),
@@ -18,7 +25,7 @@ if(delay == '120'){
 }
     });
     $('meta[name=theme-color]').remove();
-    $('head').append('<meta name="theme-color" content="'+clCSS+'">');
+    $('head').append('<meta name="theme-color" content="'+rgb2hex(clCSS)+'">');
   }
   selected('0','120');
   $('#Capa_1').css('color', clCSS);
