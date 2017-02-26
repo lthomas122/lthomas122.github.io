@@ -14,13 +14,13 @@ function rgb2hex(rgb) {
     return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 $('.menu-inner').click(function(){
-  var bgCSS = $(this).css('background'),
+  var bgCSS = $(this).css('background-color'),
   clCSS = $(this).css('color'),
   choice = $(this).attr('class').split(' ')[1],
   child = {a:'.snippets',b:'.projects',c:'.aboutme'};
   $('.menu-child').hide();
   function selected(lvl,delay) {
-    $('.selected').css('background', bgCSS).delay(delay).stop().animate({right: lvl}, 500, function(){
+    $('.selected').css('background-color', bgCSS).delay(delay).stop().animate({right: lvl}, 500, function(){
 if(delay == '120'){
   $('#Capa_1, .selected .logo').show();
   $(child[choice]).show();
