@@ -1,0 +1,120 @@
+* { box-sizing: border-box; }
+body,html {padding:0; margin:0;font-family: 'Fredoka One', sans-serif;font-size:3vmax}
+@media(max-width: 767px){ body {font-size: 4.5vmax;}}
+.table {
+  display: table;
+  height: 100vh;
+  width: 100%;
+  background: #032D7F;
+  box-shadow: inset 0px 0px 90px 5px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.menu {
+  display: table-cell;
+  vertical-align: middle;
+  letter-spacing: -1em;
+}
+.menu-wrapper {
+  width: 35%;
+  min-width: 280px;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 0;
+  letter-spacing: -1em;
+}
+.menu-child {
+  width: 46%;
+  margin: 1.75% 2%;
+  letter-spacing: initial;
+  border-radius: 10px;
+  display:inline-block;
+  position:relative;
+}
+.menu-child:before{
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+.menu-inner.a {
+  background: #FFC14F;
+}
+.menu-inner.b {
+  background: #FB5012;
+}
+.menu-inner.c {
+  background: #00A6FB;
+}
+.menu-child:nth-of-type(1), .snippets{
+  color: #ff8300;
+}
+.menu-child:nth-of-type(2), .projects{
+  color: #FFC14F;
+}
+.menu-child:nth-of-type(4), .aboutme{
+  color: #0255a0;
+}
+.shadow, .menu-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 10px;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+.menu-inner {
+  z-index: 1;
+  cursor: pointer;
+}
+.selected {
+  position: absolute;
+  top:0;left:0;right:100%;bottom:0;
+}
+.menu-inner h2{
+  position: absolute;
+  left: 5%;
+  bottom: 3%;
+  margin: 0;
+  line-height: 1;
+  font-size: 5vmax;
+}
+.logo {
+  width: 50%;
+  max-width: 171px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+.selected > div {
+  display: none;
+}
+.selected h2 {
+  padding: 3vmax;
+  font-size: 1em;
+  margin: 0;
+}
+#Capa_1 {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 3vmax;
+  transition: 0.3s;
+  max-width: 42px;
+  max-height: 42px;
+}
+#Capa_1:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+.selected .logo {
+  max-width: 85px;
+  margin: 2vmax 3vmax;
+  position: fixed;
+  display: none;
+}
