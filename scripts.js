@@ -21,11 +21,11 @@ $(function(){
 
   //history.replaceState(null, null, 'home');
 
-  function selected(lvl,delay) {
+  function selected(lvl,delay, page) {
     $('.selected').css('background-color', bgCSS).delay(delay).stop().animate({right: lvl}, 500, function(){
 if(delay == '120'){
   $('#Capa_1, .selected .logo').show();
-  $(child[choice]).show();
+  $(page).show();
 }
     });
     $('meta[name=theme-color]').remove();
@@ -40,22 +40,22 @@ $('.menu-inner').click(function(e){
   url = child[choice].substr(1);
 
   $('.menu-child').hide();
-  selected('0','120');
+  selected('0','120', child[choice]);
   $('#Capa_1').css('color', clCSS);
   history.pushState(child[choice], null, url);
 
 });
 
-function backHome() {
+function backHome(page) {
   $('#Capa_1, .selected .logo').hide();
   $(child[choice]).hide();
-  selected('100%', '0');
+  selected('100%', '0', page);
   $('.menu-child').delay(750).addClass('bounceInUp').show();
   $('meta[name=theme-color]').remove();
   $('head').append('<meta name="theme-color" content="#0255a0">');
 }
 $('#Capa_1, .selected .logo').click(function(e){
-  backHome();
+  backHome(child[choice]);
   history.pushState(null, null, '/iamlit/');
 });
 
@@ -63,10 +63,10 @@ window.addEventListener('popstate', function(e){
     var page = e.state;
 
     if (page === null) {
-      backHome();
+      backHome(page);
     } else {
       $('.menu-child').hide();
-      selected('0','120');
+      selected('0','120', page);
       $('#Capa_1').css('color', clCSS);
     }
 });
