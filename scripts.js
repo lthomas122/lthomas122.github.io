@@ -56,8 +56,7 @@ function backHome() {
 }
 $('#Capa_1, .selected .logo').click(function(e){
   backHome();
-  history.replaceState(null, null, null);
-
+  history.back();
 });
 
 window.addEventListener('popstate', function(e){
