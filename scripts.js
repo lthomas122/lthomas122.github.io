@@ -32,7 +32,7 @@ if(delay == '120'){
     $('head').append('<meta name="theme-color" content="'+rgb2hex(bgCSS)+'">');
   }
 
-$('.menu-inner').click(function(){
+$('.menu-inner').click(function(e){
 
   bgCSS = $(this).css('background-color');
   clCSS = $(this).css('color');
@@ -52,7 +52,9 @@ function backHome() {
   $('head').append('<meta name="theme-color" content="#0255a0">');
 }
 $('#Capa_1, .selected .logo').click(function(e){
-
+  $('.menu-child').hide();
+  selected('0','120');
+  $('#Capa_1').css('color', clCSS);
   history.pushState(null, null, 'home');
 
 });
