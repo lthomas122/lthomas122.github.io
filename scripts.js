@@ -3,8 +3,10 @@ function shakeIt(a){
 }
 $('.menu-child').hover( function(){
   shakeIt(this);
+    // adds shake on hover for .menu-child
 });
 function rgb2hex(rgb) {
+  // rgb to hex conversion because .css() returns rgb even though the css states a hex code
     if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
 
     rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -13,12 +15,12 @@ function rgb2hex(rgb) {
     }
     return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
-$('.menu-inner').click(function(){
-  var bgCSS = $(this).css('background-color'),
-  clCSS = $(this).css('color'),
-  choice = $(this).attr('class').split(' ')[1],
-  child = {a:'.snippets',b:'.projects',c:'.aboutme'};
-  $('.menu-child').hide();
+$(function(){
+
+  var child = {a:'.snippets',b:'.projects',c:'.aboutme'};
+
+  //history.replaceState(null, null, 'home');
+
   function selected(lvl,delay) {
     $('.selected').css('background-color', bgCSS).delay(delay).stop().animate({right: lvl}, 500, function(){
 if(delay == '120'){
@@ -29,22 +31,45 @@ if(delay == '120'){
     $('meta[name=theme-color]').remove();
     $('head').append('<meta name="theme-color" content="'+rgb2hex(bgCSS)+'">');
   }
-  selected('0','120');
-  $('#Capa_1').css('color', clCSS);
-  /*history.replaceState(null,null,child[choice]);
-  history.pushState(null, null, child[choice]);*/
-  $('#Capa_1, .selected .logo').click(function(e){
-    $('#Capa_1, .selected .logo').hide();
-    $(child[choice]).hide();
-    selected('100%', '0');
-    $('.menu-child').delay(750).addClass('bounceInUp').show();
-    $('meta[name=theme-color]').remove();
-    $('head').append('<meta name="theme-color" content="#0255a0">');
-    /*history.replaceState(null,null,'home');
-    history.pushState(null, null,'home');*/
-  });
+
+$('.menu-inner').click(function(){
+
+  bgCSS = $(this).css('background-color');
+  clCSS = $(this).css('color');
+  choice = $(this).attr('class').split(' ')[1];
+  url = child[choice].substr(1);
+
+  history.pushState(child[choice], null, url);
+
 });
 
+function backHome() {
+  $('#Capa_1, .selected .logo').hide();
+  $(child[choice]).hide();
+  selected('100%', '0');
+  $('.menu-child').delay(750).addClass('bounceInUp').show();
+  $('meta[name=theme-color]').remove();
+  $('head').append('<meta name="theme-color" content="#0255a0">');
+}
+$('#Capa_1, .selected .logo').click(function(e){
+
+  history.pushState(null, null, 'home');
+
+});
+
+window.addEventListener('popstate', function(e){
+    var page = e.state;
+
+    if (page === null) {
+      backHome();
+    } else {
+      $('.menu-child').hide();
+      selected('0','120');
+      $('#Capa_1').css('color', clCSS);
+    }
+});
+
+});
 function is_touch() {
   return 'ontouchstart' in window || navigator.maxTouchPoints;       // navigator.maxTouchPoints works on IE10/11 and Surface
 }
