@@ -21,11 +21,11 @@ $(function(){
 
   //history.replaceState(null, null, 'home');
 
-  function selected(lvl,delay, page) {
+  function selected(lvl,delay) {
     $('.selected').css('background-color', bgCSS).delay(delay).stop().animate({right: lvl}, 500, function(){
 if(delay == '120'){
   $('#Capa_1, .selected .logo').show();
-  $(page).show();
+  $(child[choice]).show();
 }
     });
     $('meta[name=theme-color]').remove();
@@ -40,33 +40,33 @@ $('.menu-inner').click(function(e){
   url = child[choice].substr(1);
 
   $('.menu-child').hide();
-  selected('0','120', child[choice]);
+  selected('0','120');
   $('#Capa_1').css('color', clCSS);
   history.pushState(child[choice], null, url);
 
 });
 
-function backHome(page) {
+function backHome() {
   $('#Capa_1, .selected .logo').hide();
   $(child[choice]).hide();
-  selected('100%', '0', page);
+  selected('100%', '0');
   $('.menu-child').delay(750).addClass('bounceInUp').show();
   $('meta[name=theme-color]').remove();
   $('head').append('<meta name="theme-color" content="#0255a0">');
 }
 $('#Capa_1, .selected .logo').click(function(e){
-  backHome(child[choice]);
-  history.pushState(null, null, '/iamlit/');
+  backHome();
+  history.pushState(child[choice], null, '/iamlit/');
 });
 
 window.addEventListener('popstate', function(e){
     var page = e.state;
 
     if (page === null) {
-      backHome(page);
+      backHome();
     } else {
       $('.menu-child').hide();
-      selected('0','120', page);
+      selected('0','120');
       $('#Capa_1').css('color', clCSS);
     }
 });
