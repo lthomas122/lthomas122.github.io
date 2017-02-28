@@ -56,7 +56,7 @@ function backHome() {
 }
 $('#Capa_1, .selected .logo').click(function(e){
   backHome();
-  history.pushState(child[choice], null, '/iamlit/');
+  history.pushState(child[choice], null, '/');
 });
 
 window.addEventListener('popstate', function(e){
