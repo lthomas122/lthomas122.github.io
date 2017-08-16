@@ -24,6 +24,9 @@ p {font-family: 'Roboto', sans-serif;font-weight: 200;}
   line-height: 0;
   letter-spacing: -1em;
 }
+.menu-wrapper::after, .menu-wrapper::before {
+  clear: both;
+}
 .menu-child {
   width: 46%;
   margin: 2%;
@@ -31,6 +34,7 @@ p {font-family: 'Roboto', sans-serif;font-weight: 200;}
   border-radius: 10px;
   display:inline-block;
   position:relative;
+  float: left;
 }
 .menu-child:before{
 	content: "";
