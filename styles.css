@@ -14,7 +14,6 @@ p {font-family: 'Roboto', sans-serif;font-weight: 200;}
 .menu {
   display: table-cell;
   vertical-align: middle;
-  letter-spacing: -1em;
 }
 .menu-wrapper {
   width: 80%;
@@ -22,7 +21,6 @@ p {font-family: 'Roboto', sans-serif;font-weight: 200;}
   max-width: 420px;
   margin: 0 auto;
   line-height: 0;
-  letter-spacing: -1em;
 }
 .menu-wrapper::after, .menu-wrapper::before {
   clear: both;
@@ -30,7 +28,6 @@ p {font-family: 'Roboto', sans-serif;font-weight: 200;}
 .menu-child {
   width: 46%;
   margin: 2%;
-  letter-spacing: initial;
   border-radius: 10px;
   display:inline-block;
   position:relative;
