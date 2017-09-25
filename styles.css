@@ -57,7 +57,7 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
 .menu-child:nth-of-type(4), .aboutme{
   color: #0255a0;
 }
-.shadow, .menu-inner {
+.shadow, .menu-inner, .menu-inner > a {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,7 +70,7 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
   -webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
-.menu-inner, .menu-inner:hover {
+.menu-inner, .menu-inner:hover, .menu-inner > a, .menu-inner > a:hover {
   z-index: 1;
   display:block;
   text-decoration: none;
@@ -112,17 +112,6 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
   padding: 0% 15% 5%;
   /*height: calc(100% - 9vmax);*/
   margin-top: 10vmax;
-}
-.selected h2 {
-  padding: 3vmax;
-  font-size: 1em;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  background: inherit;
-}
-.selected > div > h2 {
-  width: 100%;
 }
 #Capa_1 {
   display: none;
@@ -197,10 +186,49 @@ hr {
   font-size: 0.65em;
   font-weight: bold;
 }
-.aboutme .text-wrapper {
+.aboutme .text-wrapper, .projects .text-wrapper {
   text-align: center;
   /*background:#EBF2FA;*/
 }
+.projects .text-wrapper {
+  margin-bottom: 15px;
+}
+.projects h2 {
+  font-size: 1em;
+  line-height: 1;
+  margin: 5px auto;
+}
+.projects p {
+  font-size: 0.6em;
+  color: #555;
+}
+.projects .text-wrapper > a {
+  font-size: .7em;
+  text-decoration: none;
+  display: inline-block;
+  padding: .5em .5em .55em;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #fb5012;
+  line-height: 1;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0px rgba(0,0,0,0.55);
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.projects .text-wrapper > a:hover {
+  background: #FFC14F;
+}
+img.mobile-project, img.desktop-project {
+    height: 318px;
+    padding: 13px;
+    border: 2px solid #888;
+    border-radius: 10px;
+    background: #333;
+    margin: 15px auto;
+    display: inline-block;
+}
 @media(min-width: 1440px){ .menu-wrapper {max-width:none;width:35%;}}
 @media(max-width: 1024px) and (min-width: 768px){ body {font-size: 3.5vmax;} .text-wrapper {padding:0;}}
-@media(max-width: 767px){ body {font-size: 4vmax;} .text-wrapper {padding:10px;} .selected .container {padding: 7px; height:75%;}}
+@media(max-width: 767px){ body {font-size: 4vmax;} .text-wrapper {padding:10px;} .selected .container {padding: 7px; height:75%;} img.desktop-project {display:none;}}
