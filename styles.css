@@ -111,7 +111,7 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
 .selected .container {
   padding: 0% 15% 5%;
   /*height: calc(100% - 9vmax);*/
-  margin-top: 9vmax;
+  margin-top: 10vmax;
 }
 .selected h2 {
   padding: 3vmax;
@@ -146,6 +146,7 @@ left: 10px;
 right: 0;
 bottom: auto;
 margin: auto;
+width: 9vmax;
 }
 hr {
   border: none;
