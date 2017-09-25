@@ -10,6 +10,7 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
   background: #032D7F;
   box-shadow: inset 0px 0px 90px 5px rgba(0,0,0,0.5);
   overflow: hidden;
+  transition: background .5s;
 }
 .menu {
   display: table-cell;
@@ -69,15 +70,22 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
   -webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
-.menu-inner {
+.menu-inner, .menu-inner:hover {
   z-index: 1;
+  display:block;
+  text-decoration: none;
+  outline: 0;
   cursor: pointer;
-}
+  color: inherit;
+}/*
 .selected {
   position: absolute;
   top:0;left:0;right:100%;bottom:0;
   overflow-y: scroll;
 }
+.selected {
+  display: none;
+}*/
 .menu-inner h2{
   position: absolute;
   left: 5%;
@@ -94,8 +102,11 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
   bottom: 10px;
   cursor: pointer;
 }
-.selected > div {
-  display: none;
+.text-wrapper {
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: .5em;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 5px 0px;
 }
 .selected .container {
   padding: 0% 15% 5%;
@@ -128,10 +139,13 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
   cursor: pointer;
 }
 .selected .logo {
-  max-width: 85px;
-  margin: 2vmax 3vmax;
-  position: fixed;
-  display: none;
+  max-width: 100px;
+position: absolute;
+top: -6.5vmax;
+left: 10px;
+right: 0;
+bottom: auto;
+margin: auto;
 }
 hr {
   border: none;
@@ -154,7 +168,7 @@ hr {
 .aboutme p {
   font-size: 0.5em;
   line-height: 1.4;
-  color: #EBF2FA;
+  color: #555;
 }
 .aboutme ul {
   font-size: 0.5em;
@@ -172,6 +186,7 @@ hr {
   padding: 0.45em 0.5em;
   border-radius: 5px;
   line-height: 1;
+  color: #fff;
 }
 .aboutme a {
   color: #0255a0;
@@ -183,12 +198,8 @@ hr {
 }
 .aboutme .text-wrapper {
   text-align: center;
-}
-.text-wrapper {
-  /*background: #;
-  border-radius: 5px;*/
-  padding: 10px 20px;
+  /*background:#EBF2FA;*/
 }
 @media(min-width: 1440px){ .menu-wrapper {max-width:none;width:35%;}}
 @media(max-width: 1024px) and (min-width: 768px){ body {font-size: 3.5vmax;} .text-wrapper {padding:0;}}
-@media(max-width: 767px){ body {font-size: 4vmax;} .text-wrapper {padding:0;} .selected .container {padding: 7px; height:75%;}}
+@media(max-width: 767px){ body {font-size: 4vmax;} .text-wrapper {padding:10px;} .selected .container {padding: 7px; height:75%;}}
