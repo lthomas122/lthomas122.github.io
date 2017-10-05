@@ -193,7 +193,7 @@ hr {
   text-align: center;
   /*background:#EBF2FA;*/
 }
-.projects .text-wrapper {
+.projects .text-wrapper, .snippets .text-wrapper {
   margin-bottom: 15px;
 }
 .projects h2 {
