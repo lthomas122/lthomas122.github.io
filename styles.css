@@ -104,6 +104,9 @@ p {font-family: 'Oswald', sans-serif;font-weight: 200;}
 }
 .text-wrapper {
   padding: 10px 20px;
+  width: 900px;
+  max-width: 90vw;
+  margin: auto;
   background: #fff;
   border-radius: .5em;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 5px 0px;
